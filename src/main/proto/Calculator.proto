@@ -1,0 +1,23 @@
+syntax = "proto3";
+option java_package = "org.example";
+option java_multiple_files = true;
+
+service Calculator {
+  rpc sum(NumberList) returns (Number) {}
+
+  rpc sub(NumberList) returns (Number) {}
+
+  rpc mult(NumberList) returns (Number) {}
+
+  rpc div(NumberList) returns (Number) {}
+
+  rpc pow(NumberList) returns (Number) {}
+}
+
+message NumberList {
+  repeated Number numbers = 1;
+}
+
+message Number {
+  float number = 1;
+}
